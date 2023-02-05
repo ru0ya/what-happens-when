@@ -205,6 +205,8 @@ Check HSTS list
   single HTTP request could potentially leave the user vulnerable to a
   `downgrade attack`_, which is why the HSTS list is included in modern web
   browsers.)
+* HTTPS is a more secure version of HTTP, data is encrypted incase a third 
+  party gains access to it they wont be able to interpret it.
 
 DNS lookup
 ----------
@@ -291,7 +293,7 @@ Now that the network library has the IP address of either our DNS server or
 the default gateway it can resume its DNS process:
 
 * The DNS client establishes a socket to UDP port 53 on the DNS server,
-  using a source port above 1023.
+  using a source port above 1023.DNS(Domain Name Server)
 * If the response size is too large, TCP will be used instead.
 * If the local/ISP DNS server does not have it, then a recursive search is
   requested and that flows up the list of DNS servers until the SOA is reached,
@@ -378,6 +380,9 @@ TLS handshake
   public certificate signed by a CA (Certificate Authority). The certificate
   contains a public key that will be used by the client to encrypt the rest of
   the handshake until a symmetric key can be agreed upon.
+* The server sends via an SSL(Secure Sockets Layer) which ensures data sent 
+  between the server and the client is encrypted and impossible to decipher by 
+  any third party that intercepts it.
 
 * The client verifies the server digital certificate against its list of
   trusted CAs. If trust can be established based on the CA, the client
